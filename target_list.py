@@ -18,9 +18,6 @@ def create_worklist(df):
         df['epoch'] = ['2000.0'] * len(df)
 
     for i, row in df.iterrows():
-        print i
-        print row['mag']
-        print row['epoch']
         if 'mag' in row.keys():
             outline = '{0:d}  "{1:.2f} {2:s} {3:s}  "   {4:s}  {5:s}  {6:s}  0.0  0.0'.format(i + 1, row['mag'],
                                                                                               row['spt'], row['Target'],

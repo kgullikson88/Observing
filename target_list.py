@@ -89,7 +89,8 @@ def get_followup():
 
     # Read in the observed target list
     filename = '{}/Dropbox/School/Research/AstarStuff/TargetLists/Observed_Targets3.xls'.format(os.environ['HOME'])
-    sample = pd.read_excel(filename, sheetname=0, na_values=['     ~'])[1:]
+    sample = pd.read_excel(filename, sheetname=0, na_values=['     ~'])
+    sample = sample.reset_index(drop=True)[1:]
     sample['Mag K'] = sample.apply(lambda row: row['Mag K'] if pd.notnull(row['Mag K']) else row['Mag V'], axis=1)
 
 
